@@ -1,2 +1,2 @@
-# coding-for-life
-Coding for life
+# learning-for-life
+Learning for life
