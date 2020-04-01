@@ -1,4 +1,4 @@
-class Solution {//BFS
+class Solution {//BFS with common if() X 4
 public:
     int numIslands(vector<vector<char>>& grid) {
         if(grid.size() == 0 || grid[0].size() == 0) {
@@ -20,7 +20,7 @@ private:
     void BFS(vector<vector<char>>& grid, int x, int y) {
         queue<vector<int>> q;
         q.push({x, y});
-        grid[x][y] == '0';
+        grid[x][y] = '0';
         while(!q.empty()) {
             x = q.front()[0], y = q.front()[1];
             q.pop();
