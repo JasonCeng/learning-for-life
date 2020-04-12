@@ -25,3 +25,16 @@ class MyStack {
       return true;
     }
 }
+
+int main() {
+  MyStack s;
+  s.push(1);
+  s.push(2);
+  s.push(3);
+  for(int i=0; i < 4; i++) {
+    if(!s.isEmpty()) {
+      cout << s.top() << endl;
+    }
+    cout << (s.pop() ? "true" : "false") << endl;
+  }
+}
