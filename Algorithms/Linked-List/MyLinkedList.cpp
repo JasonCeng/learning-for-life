@@ -33,12 +33,34 @@ public:
 
   /** Add a node of value val before the first element of the linked list. After the insertion, the new node will be the first node of the linked list. */
   void addAtHead(int val) {
-
+    Node *temp=new Node(val);
+    if(this->head==NULL)
+    {
+      this->head=temp;
+      this->tail=temp;
+    }
+    else
+    {
+      temp->next=this->head;
+      this->head=temp;
+    }
+    this->size++;
   }
 
   /** Append a node of value val to the last element of the linked list. */
   void addAtTail(int val) {
-
+    Node *temp=new Node(val);
+    if(this->tail==NULL)
+    {
+      this->head=temp;
+      this->tail=temp;
+    }
+    else
+    {
+      this->tail->next=temp;
+      this->tail=temp;
+    }
+    this->size++;
   }
 
   /** Add a node of value val before the index-th node in the linked list. If index equals to the length of linked list, the node will be appended to the end of linked list. If index is greater than the length, the node will not be inserted. */
