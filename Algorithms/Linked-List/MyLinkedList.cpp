@@ -92,7 +92,28 @@ public:
 
   /** Delete the index-th node in the linked list, if the index is valid. */
   void deleteAtIndex(int index) {
-
+    if(index >= size) {
+      return;
+    }
+    if(index == 0) {
+      this->head = this->head->next;
+    }else if(index == size-1) {
+      int count=0;
+      Node* temp = this->head;
+      for(int i = 0; i < index-1; i++) {
+        temp = temp->next;
+      }
+      temp->next = temp->next->next;
+      this->tail = temp;
+    } else {
+      int count = 0;
+      Node* temp = this->head;
+      for(int i = 0; i < index - 1; i++) {
+        temp=temp->next;
+      }
+      temp->next = temp->next->next;
+    }
+    this->size--;
   }
 };
 
