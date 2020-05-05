@@ -38,8 +38,8 @@ public:
       temp = s.top();
       s.pop();
       v.push_back(temp->val);
-      if(temp->left) s.push(temp->left);
       if(temp->right) s.push(temp->right);
+      if(temp->left) s.push(temp->left);
     }
     return v;
   }
