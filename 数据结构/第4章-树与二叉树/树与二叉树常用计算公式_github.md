@@ -20,3 +20,13 @@
   
 ④ 结点 <img src="https://latex.codecogs.com/gif.latex?i"/> 所在层次（深度）为 <img src="https://latex.codecogs.com/gif.latex?&#x5C;lfloor%20log_2{i}%20&#x5C;rfloor%20+1"/> 。（设根结点为第1层）
   
+##  经典例题
+  
+**408考研-2011-4** 若一棵完全二叉树有768个结点，则二叉树中叶结点的个数是_____。
+A.257    B.258    C.384    D.385
+  
+###  解法1
+  
+  
+根据完全二叉树的性质，最后一个分支结点的序号为 <img src="https://latex.codecogs.com/gif.latex?&#x5C;lfloor%20n&#x2F;2%20&#x5C;rfloor%20=%20&#x5C;lfloor%20768&#x2F;2%20&#x5C;rfloor%20=%20384"/> ，故叶子结点的个数为 ￥ 768 - 384 = 384 <img src="https://latex.codecogs.com/gif.latex?###%20%20解法2由二叉树的性质"/> N = N_0 + N_1 + N_2 <img src="https://latex.codecogs.com/gif.latex?和"/> N_0 = N_2 + 1 <img src="https://latex.codecogs.com/gif.latex?可知，"/> N = 2N_0 - 1 + N_1， 2N_0 - 1 + N_1 = 768 <img src="https://latex.codecogs.com/gif.latex?，显然，"/> N_1 = 1 <img src="https://latex.codecogs.com/gif.latex?，"/> 2N_0 = 768 <img src="https://latex.codecogs.com/gif.latex?，则"/> N_0 = 384 <img src="https://latex.codecogs.com/gif.latex?###%20%20解法3完全二叉树的叶子结点只可能出现在最下两层，由题可计算完全二叉树的高度为10。第10层的叶子结点数为"/> 768 - (2^9-1) = 257 <img src="https://latex.codecogs.com/gif.latex?；第10层的叶子结点在第9层公有"/> \lceil 257/2 \rceil = 129 <img src="https://latex.codecogs.com/gif.latex?个父节点，第9层的叶子结点数为"/> (2^9 - 1) - 129 = 127 <img src="https://latex.codecogs.com/gif.latex?，则叶子结点总数为"/> 257 + 127 = 384 $
+  
