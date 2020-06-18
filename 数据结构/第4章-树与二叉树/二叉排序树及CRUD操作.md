@@ -29,6 +29,18 @@
 
 3）若二叉排序树为空，则新结点作为二叉树的根结点。
 
+```c
+void Create_BST(BiTree &T, KeyType str[], int n) {
+  //用关键字数组str[]建立一个二叉排序树
+  T = NULL; //初始时bt为空树
+  int i = 0;
+  while(i < n) {  //依次将每个元素插入
+    BST_Insert(T, str[i]);
+    i++;
+  }
+}
+```
+
 ### Retrieve-查找二叉排序树的某结点
 
 ### Update-插入结点到二叉排序树中
