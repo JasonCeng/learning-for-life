@@ -52,6 +52,23 @@ void Create_BST(BiTree &T, KeyType str[], int n) {
 
 3）当根结点的关键字**小于**给定关键字值k时，在根结点的右子树中查找。
 
+二叉排序树的非递归查找算法：
+```c
+BSTNode *BST_Search(BiTree T,ElemTypr key,BSTNode *&p) {
+  //查找函数返回值指向关键字值为key的结点指针，若不存在，返回NULL
+  p = NULL; //p指向被查找结点的双亲，用于插入和删除操作中
+  while(T != NULL && key != T->data) {
+    p = T;
+    if(key < T->data) {
+      T = T->lchild;
+    } else {
+      T = T->rchild;
+    }
+    return T;
+  }
+}
+```
+
 ### Update-插入结点到二叉排序树中
 二叉排序树作为一种动态集合，其特点是树的结构通常不是一次生成的，而是在查找过程中，当树中不存在关键字等于给定值的结点时再进行插入。
 
