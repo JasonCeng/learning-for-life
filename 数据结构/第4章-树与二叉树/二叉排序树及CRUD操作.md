@@ -54,4 +54,28 @@ void Create_BST(BiTree &T, KeyType str[], int n) {
 
 3）若关键字k大于根结点关键字，则插入到右子树中。
 
+```c
+int BST_Insert(BiTree &T, KeyType k) {
+  //在二叉=排序树T中插入一个关键字为k的结点
+  if(T == NULL) {
+    T = (BiTree)malloc(sizeof(BSTNode));
+    T->key = k;
+    T->lchild = T->rchild = NULL;
+    return 1;  //返回1，表示成功
+  } else if(k == T-> key) {  //树中存在相同关键字的结点
+    return 0;
+  } else if(k < T->key) {  //插入到T的左子树中
+    return BST_Insert(T->lchild, k);
+  } else {
+    return BST_Insert(T->rchild, k);
+  }
+}
+```
+
+由此可见，插入的新结点一定是某个叶结点。下图是向二叉树插入结点28的过程，其中虚线表示查找路径。
+
+![二叉排序树插入结点](./picture/二叉排序树插入结点.png)
+
+图2. 向二叉排序树插入结点28
+
 ### Delete-删除二叉树的结点
